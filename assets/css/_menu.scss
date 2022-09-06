@@ -1,0 +1,54 @@
+@import 'colors';
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 130px;
+
+    .position-menu {
+        display: flex;
+        width: 90%;
+        justify-content: left;
+        align-items: center;
+
+        li {
+            margin: 5px;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+
+            &:hover > ul {
+                display: block;
+            }
+
+            #home {
+                color: $secondColor;
+                border: 2.5px solid $secondColor;
+                font-size: 0.85em;
+            }
+
+            a {
+                color: $primaryColor;
+                font-weight: bold;
+                font-size: 0.9em;
+                letter-spacing: 1px;
+                padding: 0.8em 2.5em;
+                border: 2.5px solid transparent;
+                border-radius: 10px;
+
+                &:hover {
+                    transition: 0.5s;
+                    color: $thirdColor;
+                    border: 2.5px solid $thirdColor;
+                }
+
+                &:active {
+                    transition: 0.1s;
+                    color: black;
+                    border: 2.5px solid black;
+                }
+            }
+        }
+    }
+}
