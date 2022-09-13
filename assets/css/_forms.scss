@@ -1,0 +1,17 @@
+
+.field-forms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    background: white;
+    position: relative;
+
+    .position-field-forms {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+}

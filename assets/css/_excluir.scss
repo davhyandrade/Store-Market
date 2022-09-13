@@ -1,42 +1,44 @@
 @import 'colors';
 
 .position-field-forms {
-    .cadastro {
-        display: flex;
+    .excluir {
         align-items: center;
-        width: 80%;
-    
+        position: absolute;
+        left: 50%;
+        display: none;
+        z-index: 10;
+        margin-right: 15%;
+        margin-top: 100px;
+
+        &::before {
+            content: "";
+            display: flex;
+            width: 1px;
+            height: 300px;
+            background: linear-gradient(45deg, transparent,#8080802e, transparent);
+            margin-bottom: 130px;
+        }
+
         form { 
-            position: absolute;
-            width: 32vw;
+            width: 25vw;
             padding: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             border-radius: 5px;
-            margin-bottom: 100px;
-    
-            &::before {
-                content: "";
-                display: block;
-                width: 50vw;
-                height: 1px;
-                background: linear-gradient(45deg, transparent,#8080802e, transparent);
-                margin-bottom: 130px;
-            }
-    
+
             h1 {
                 font-size: 25px;
                 font-weight: normal;
                 color: $primaryColor;
                 margin-bottom: 30px;
             }
-    
+
             div {
                 width: 100%;
                 margin-bottom: 30px;
-    
+
                 &::after {
                     content: '';
                     display: block;
@@ -45,14 +47,14 @@
                     background: rgba(201, 201, 201, 0.563);
                     border-radius: 10px;
                 }
-    
+
                 label {
                     text-align: start;
                     margin-right: 10px;
                     color: #333;
                     font-size: 14px;
                 }
-    
+
                 .input-text {
                     margin-top: 5px;
                     padding: 5px;
@@ -60,14 +62,14 @@
                     border: none;
                     outline: none;
                     width: 97%;
-    
+
                     &::placeholder {
                         color: rgba(128, 128, 128, 0.522);
                     }
                 }
             }
-    
-            .btn-submit {
+
+            .btn-submit-excluir {
                 padding: 10px 30px;
                 width: 100%;
                 border-radius: 5px;
@@ -77,7 +79,7 @@
                 background: $secondColor;
                 color: white;
                 font-weight: bold;
-    
+
                 &:hover {
                     transition: 1s;
                     background: $primaryColor;
@@ -89,16 +91,5 @@
                 }
             }
         }
-    }
-    
-    p {
-        width: 60%;
-        display: flex;
-        align-items: center;
-        color: #6f6f6f;
-        font-size: 16px;
-        margin-right: 5%;
-        line-height: 24px;
-        z-index: 9;
     }
 }

@@ -78,3 +78,29 @@ buttonCadastrar.addEventListener('click', () => {
     left:0
   })
 });
+
+//===================================================================
+
+//----------------< Button Excluir >
+
+const buttonExcluir = document.querySelector('#btn-excluir');
+const formExcluir = document.querySelector('.excluir');
+const textoFieldForms = document.querySelector('#txt-forms');
+let isActiveButtonExcluir = true;
+
+buttonExcluir.addEventListener('click', () => {
+  window.scrollTo({
+    top: 800,
+    left:0 
+  })
+
+  if(isActiveButtonExcluir) {
+    isActiveButtonExcluir = false;
+    formExcluir.style.display = 'flex';
+    textoFieldForms.style.display = 'none';
+  } else {
+    isActiveButtonExcluir = true;
+    formExcluir.style.display = 'none';
+    textoFieldForms.style.display = 'flex';
+  }
+});

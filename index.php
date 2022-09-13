@@ -9,7 +9,7 @@
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/button-top.js" defer></script>
     <script src="assets/js/pop-up-escola.js" defer></script>
-    <script src="assets/js/pop-up.js" defer></script>
+    <!-- <script src="assets/js/pop-up.js" defer></script> -->
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -25,7 +25,7 @@
                     <a>ALTERAR</a>
                 </li>
                 <li>
-                    <a>EXCLUIR</a>
+                    <a id="btn-excluir">EXCLUIR</a>
                 </li>
                 <li>
                     <a id="btn-cadastrar">CADASTRAR</a>
@@ -49,32 +49,59 @@
 
     </section>
 
-    <section class="field-cadastrar">
+    <section class="field-forms">
 
-        <div class="cadastro">                
-            <form method="POST">
-                <h1>Cadastro Produtos</h1>
-                <div>
-                    <label for="input-nome">Nome</label>
-                    <input spellcheck="true" name="input_nome" id="input-nome" class="input-text" type="text" placeholder="Digite o nome do Produto" required>
-                </div>
-                <div>
-                    <label for="input-estoque">Estoque</label>
-                    <input name="input_estoque" id="input-estoque" class="input-text" type="number" placeholder="Digite a quantidade disponível do Produto" required>
-                </div>
-                <input name="btn_submit" class="btn-submit" type="submit">
-                <?php 
-                    extract($_POST, EXTR_OVERWRITE);
-                    
-                    if(isset($btn_submit)) {
-                        include_once 'assets/php/produto.php';
-                        $produto = new produto(); 
-                        $produto->setNome($input_nome);
-                        $produto->setEstoque($input_estoque);
-                        $produto->salvar();
-                    }
-                ?>
-            </form>
+        <div class="position-field-forms">
+            
+            <div class="cadastro">               
+                <form method="POST">
+                    <h1>Cadastro Produtos</h1>
+                    <div>
+                        <label for="input-nome">Nome</label>
+                        <input spellcheck="true" name="input_nome" id="input-nome" class="input-text" type="text" placeholder="Digite o nome do Produto" required>
+                    </div>
+                    <div>
+                        <label for="input-estoque">Estoque</label>
+                        <input name="input_estoque" id="input-estoque" class="input-text" type="number" placeholder="Digite a quantidade disponível do Produto" required>
+                    </div>
+                    <input name="btn_submit" class="btn-submit" type="submit">
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit)) {
+                            include_once 'assets/php/produto.php';
+                            $produto = new produto(); 
+                            $produto->setNome($input_nome);
+                            $produto->setEstoque($input_estoque);
+                            $produto->salvar();
+                        }
+                    ?>
+                </form>
+            </div>
+
+            <p id="txt-forms">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+
+            <div class="excluir">
+                <form method="POST">
+                    <h1>Excluir Produtos</h1>
+                    <div>
+                        <label for="input-id-excluir">Id Produto</label>
+                        <input name="input_id_excluir" id="input-id-excluir" class="input-text" type="number" placeholder="Digite o Id do produto" required>
+                    </div>
+                    <input name="btn_submit_excluir" class="btn-submit-excluir" type="submit">
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_excluir)) {
+                            include_once 'assets/php/produto.php';
+                            $produto = new produto(); 
+                            $produto->setId($input_id_excluir);
+                            $produto->excluir();
+                        }
+                    ?>
+                </form>
+            </div>
+
         </div>
 
     </section>

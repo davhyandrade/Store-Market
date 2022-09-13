@@ -368,7 +368,7 @@ footer .footer_position .btn_rodape div input:hover {
   z-index: 1;
 }
 
-.field-cadastrar {
+.field-forms {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,12 +376,20 @@ footer .footer_position .btn_rodape div input:hover {
   background: white;
   position: relative;
 }
-.field-cadastrar .cadastro {
+.field-forms .position-field-forms {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.position-field-forms .cadastro {
   display: flex;
   align-items: center;
   width: 80%;
 }
-.field-cadastrar .cadastro form {
+.position-field-forms .cadastro form {
   position: absolute;
   width: 32vw;
   padding: 60px;
@@ -392,7 +400,7 @@ footer .footer_position .btn_rodape div input:hover {
   border-radius: 5px;
   margin-bottom: 100px;
 }
-.field-cadastrar .cadastro form::before {
+.position-field-forms .cadastro form::before {
   content: "";
   display: block;
   width: 50vw;
@@ -400,17 +408,17 @@ footer .footer_position .btn_rodape div input:hover {
   background: linear-gradient(45deg, transparent, rgba(128, 128, 128, 0.1803921569), transparent);
   margin-bottom: 130px;
 }
-.field-cadastrar .cadastro form h1 {
+.position-field-forms .cadastro form h1 {
   font-size: 25px;
   font-weight: normal;
   color: #333;
   margin-bottom: 30px;
 }
-.field-cadastrar .cadastro form div {
+.position-field-forms .cadastro form div {
   width: 100%;
   margin-bottom: 30px;
 }
-.field-cadastrar .cadastro form div::after {
+.position-field-forms .cadastro form div::after {
   content: "";
   display: block;
   height: 1px;
@@ -418,13 +426,13 @@ footer .footer_position .btn_rodape div input:hover {
   background: rgba(201, 201, 201, 0.563);
   border-radius: 10px;
 }
-.field-cadastrar .cadastro form div label {
+.position-field-forms .cadastro form div label {
   text-align: start;
   margin-right: 10px;
   color: #333;
   font-size: 14px;
 }
-.field-cadastrar .cadastro form div .input-text {
+.position-field-forms .cadastro form div .input-text {
   margin-top: 5px;
   padding: 5px;
   border-radius: 5px;
@@ -432,16 +440,16 @@ footer .footer_position .btn_rodape div input:hover {
   outline: none;
   width: 97%;
 }
-.field-cadastrar .cadastro form div .input-text::-moz-placeholder {
+.position-field-forms .cadastro form div .input-text::-moz-placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .cadastro form div .input-text:-ms-input-placeholder {
+.position-field-forms .cadastro form div .input-text:-ms-input-placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .cadastro form div .input-text::placeholder {
+.position-field-forms .cadastro form div .input-text::placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .cadastro form .btn-submit {
+.position-field-forms .cadastro form .btn-submit {
   padding: 10px 30px;
   width: 100%;
   border-radius: 5px;
@@ -452,17 +460,108 @@ footer .footer_position .btn_rodape div input:hover {
   color: white;
   font-weight: bold;
 }
-.field-cadastrar .cadastro form .btn-submit:hover {
+.position-field-forms .cadastro form .btn-submit:hover {
   transition: 1s;
   background: #333;
 }
-.field-cadastrar .cadastro form .btn-submit:active {
+.position-field-forms .cadastro form .btn-submit:active {
   transition: 0.1s;
   background: black;
 }
-.field-cadastrar .cadastro form h5 {
-  margin-top: 30px;
-  font-size: 20px;
+.position-field-forms p {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  color: #6f6f6f;
+  font-size: 16px;
+  margin-right: 5%;
+  line-height: 24px;
+  z-index: 9;
+}
+
+.position-field-forms .excluir {
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  display: none;
+  z-index: 10;
+  margin-right: 15%;
+  margin-top: 100px;
+}
+.position-field-forms .excluir::before {
+  content: "";
+  display: flex;
+  width: 1px;
+  height: 300px;
+  background: linear-gradient(45deg, transparent, rgba(128, 128, 128, 0.1803921569), transparent);
+  margin-bottom: 130px;
+}
+.position-field-forms .excluir form {
+  width: 25vw;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.position-field-forms .excluir form h1 {
+  font-size: 25px;
   font-weight: normal;
-  color: #007200;
+  color: #333;
+  margin-bottom: 30px;
+}
+.position-field-forms .excluir form div {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.position-field-forms .excluir form div::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: rgba(201, 201, 201, 0.563);
+  border-radius: 10px;
+}
+.position-field-forms .excluir form div label {
+  text-align: start;
+  margin-right: 10px;
+  color: #333;
+  font-size: 14px;
+}
+.position-field-forms .excluir form div .input-text {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 97%;
+}
+.position-field-forms .excluir form div .input-text::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form div .input-text:-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form div .input-text::placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form .btn-submit-excluir {
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  background: rgb(255, 89, 89);
+  color: white;
+  font-weight: bold;
+}
+.position-field-forms .excluir form .btn-submit-excluir:hover {
+  transition: 1s;
+  background: #333;
+}
+.position-field-forms .excluir form .btn-submit-excluir:active {
+  transition: 0.1s;
+  background: black;
 }/*# sourceMappingURL=style.css.map */
