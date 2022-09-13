@@ -9,7 +9,7 @@
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/button-top.js" defer></script>
     <script src="assets/js/pop-up-escola.js" defer></script>
-    <!-- <script src="assets/js/pop-up.js" defer></script> -->
+    <script src="assets/js/pop-up.js" defer></script>
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
