@@ -9,7 +9,7 @@
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/button-top.js" defer></script>
     <script src="assets/js/pop-up-escola.js" defer></script>
-    <script src="assets/js/pop-up.js" defer></script>
+    <!-- <script src="assets/js/pop-up.js" defer></script> -->
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -101,9 +101,48 @@
                     ?>
                 </form>
             </div>
-
         </div>
+        
+    </section>
 
+    <section class="field-consultar">
+        <div class="consultar">
+            <form method="POST">
+                <h1>Pesquisar Produto</h1>
+                <div>
+                    <label for="input-nome-consultar">Nome</label>
+                    <input name="input_nome_consultar" id="input-nome-consultar" class="input-text" type="text" placeholder="Digite o nome do produto" required>
+                </div>
+                <input name="btn_submit_consultar" class="btn-submit-consultar" type="submit">
+            </form>
+
+            <table>
+                <?php 
+                    extract($_POST, EXTR_OVERWRITE);
+                    
+                    if(isset($btn_submit_consultar)) {
+                        include_once 'assets/php/produto.php';
+                        $produto = new produto(); 
+                        $produto->setNome("%" . $input_nome_consultar . "%");
+                        $pro_bd=$produto->consultar();
+
+                        echo "<tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Estoque</th>
+                            </tr>";
+
+                        foreach($pro_bd as $pro_mostrar) {
+                            echo "<tr>
+                                    <td>$pro_mostrar[0]</td>
+                                    <td>$pro_mostrar[1]</td>
+                                    <td>$pro_mostrar[2]</td>
+                                </tr>";
+                        }
+                    }
+                ?>   
+            </table>
+        </div>
     </section>
 
     <section class="field-list">
@@ -128,12 +167,11 @@
                         $listar_bd = $lista->listar();
     
                         foreach($listar_bd as $listar) {
-    
-                        echo "<tr>
-                                <td>$listar[0]</td>
-                                <td>$listar[1]</td>
-                                <td>$listar[2]</td>
-                            </tr>";
+                            echo "<tr>
+                                    <td>$listar[0]</td>
+                                    <td>$listar[1]</td>
+                                    <td>$listar[2]</td>
+                                </tr>";
                         }
     
                     ?>

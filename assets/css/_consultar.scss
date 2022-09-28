@@ -1,0 +1,123 @@
+@import 'colors';
+
+.field-consultar {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    
+    .consultar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    
+        form { 
+            width: 32vw;
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            margin-bottom: 100px;
+    
+            &::before {
+                content: "";
+                display: block;
+                width: 50vw;
+                height: 1px;
+                background: linear-gradient(45deg, transparent,#8080802e, transparent);
+                margin-bottom: 130px;
+            }
+    
+            h1 {
+                font-size: 25px;
+                font-weight: normal;
+                color: $primaryColor;
+                margin-bottom: 30px;
+            }
+    
+            div {
+                width: 100%;
+                margin-bottom: 30px;
+    
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    width: 100%;
+                    background: rgba(201, 201, 201, 0.563);
+                    border-radius: 10px;
+                }
+    
+                label {
+                    text-align: start;
+                    margin-right: 10px;
+                    color: #333;
+                    font-size: 14px;
+                }
+    
+                .input-text {
+                    margin-top: 5px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    width: 97%;
+    
+                    &::placeholder {
+                        color: rgba(128, 128, 128, 0.522);
+                    }
+                }
+            }
+    
+            .btn-submit-consultar {
+                padding: 10px 30px;
+                width: 100%;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                margin-top: 5px;
+                background: $secondColor;
+                color: white;
+                font-weight: bold;
+    
+                &:hover {
+                    transition: 1s;
+                    background: $primaryColor;
+                }
+                
+                &:active {
+                    transition: 0.1s;
+                    background: black;
+                }
+            }
+ 
+        }
+
+        table {
+            width: 50%;
+            margin-bottom: 100px;
+    
+            tr {
+                filter: drop-shadow(0 10px 15px rgba(128, 128, 128, 0.467));
+
+                th {
+                    color: white;
+                    padding: 10px 40px;
+                    background: $thirdColor;
+                    border-radius: 5px;
+                }
+
+                td {
+                    color: $textColor;
+                    text-align: center;
+                    padding: 10px 40px;
+                    background: white;
+                    border-radius: 5px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

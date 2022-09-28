@@ -82,4 +82,17 @@ class produto
             echo "Erro ao excluir - " . $exc->getMessage();
         }
     }
+
+    function consultar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from produtos where nome like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch(PDOException $exc) {
+            echo "Erro ao executar consulta - " . $exc->getMessage();
+        }
+    }
 } 
