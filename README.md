@@ -1,5 +1,5 @@
 <div align="right">
-  <sub>Create in:</sub>  
+  <sub>Create in</sub>  
   
   `06/09/2022`
 </div>
